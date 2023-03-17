@@ -31,16 +31,16 @@
 }
 
 .nav-button-selected {
-    color: #088D0E;
+    color: #10C75B;
     font-size: 4vh;
-    border-bottom: solid 1vh #088D0E;
+    border-bottom: solid 1vh #10C75B;
 }
 
 .nav-button:hover {
     cursor: pointer;
-    color: #088D0E;
+    color: #10C75B;
     font-size: 4vh;
-    border-bottom: solid 1vh #088D0E;
+    border-bottom: solid 1vh #10C75B;
 }
 
 div.logo-container{
@@ -58,7 +58,7 @@ img.logo-img{
 button.social-media-button{
     width: 5vh;
     height: 5vh;
-    background-color: #088D0E;
+    background-color: #10C75B;
     border-radius: 50%;
     border-color: transparent;
     margin-right: 1vh;
@@ -80,7 +80,7 @@ button.logout-button {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #088D0E;
+    background-color: #10C75B;
     height: 5vh;
     width: 12vh;
     border-color: transparent;

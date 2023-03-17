@@ -1,0 +1,81 @@
+div.register-panel-content{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.register-form-container{
+    height: 62vh;
+    width: 25vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #33B9DE;
+}
+
+form.register-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input.register-fields{
+    height: 4vh;
+    width: 20vw;
+    margin: 1vh;
+    border-radius: 20px;
+    border: none;
+    padding-left: 1vw;
+    transition: 0.3s;
+    border: 5px solid #10C75B;
+}
+
+
+div.logo-container {
+    width: 15vh;
+    height: 15vh;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+}
+p.dont-have-acc, span.collored-words{
+    font-size: 2vh;
+    margin: 10px;
+    color: black;
+}
+
+span.collored-words{
+    color: #10C75B;
+    cursor: pointer;
+}
+
+button{
+    font-size: 2vh;
+    height: 4vh;
+    width: 9vw;
+    border-radius: 30px;
+    border-color: transparent;
+    background-color: #10C75B;
+    color: white;
+    cursor: pointer;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-family: "Sofia", sans-serif;
+}
+
+button:hover{
+    background-color: white;
+    color: rgb(237, 138, 49);
+    transition: 0.7s;
+}
+
+input{
+    text-align: center;
+    border: 5px solid #10C75B;
+}
