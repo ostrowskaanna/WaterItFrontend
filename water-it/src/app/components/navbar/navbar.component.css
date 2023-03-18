@@ -71,7 +71,7 @@ button.social-media-button{
 }
 
 button.social-media-button:hover {
-    background-color: #8CB7D9;
+    background-color: #33B9DE;
     color: white;
     cursor: pointer;
 }
@@ -92,7 +92,7 @@ button.logout-button {
 }
 
 button.logout-button:hover {
-    background-color: #8CB7D9;
+    background-color: #33B9DE;
     cursor: pointer;
 }
 

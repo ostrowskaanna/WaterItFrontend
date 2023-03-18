@@ -10,6 +10,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WeatherForecastComponent } from './components/dashboardComponents/weather-forecast/weather-forecast.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardPageComponent } from './components/dashboardComponents/dashboard-page/dashboard-page.component';
+import { TempPipe } from './pipes/temp.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     HomeComponent,
     NavbarComponent,
-    WeatherForecastComponent
+    WeatherForecastComponent,
+    DashboardPageComponent,
+    TempPipe
   ],
   imports: [
     BrowserModule,

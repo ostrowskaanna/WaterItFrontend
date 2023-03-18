@@ -1,1 +1,14 @@
-<p>weather-forecast works!</p>
+<div class="weather-section-container" *ngIf="weatherForecast$ | async as weather">
+    <div class="current-weather-container">
+        <img class="current-weather-icon" [src]="weather.current.condition.icon" alt="">
+        <p class="current-weather-temp">{{weather.current.temp_c | temp}}</p>
+    </div>
+    <div class="weather-forecast-container">
+        <ng-container *ngFor="let item of weather.forecast.forecastday">
+            <div class="weather-day-forecast">
+                <img class="forecast-weather-icon" [src]="item.day.condition.icon" alt="">
+                <p>{{item.day.avgtemp_c | temp}}</p>
+            </div>
+        </ng-container>
+    </div>
+</div>
