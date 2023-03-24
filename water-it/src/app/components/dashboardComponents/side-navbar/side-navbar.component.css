@@ -1,0 +1,23 @@
+.side-bar {
+    background-color: #10C75B;
+    width: 10vh;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-bar-icon {
+    color: white;
+    font-size: 6vh;
+    height: 6vh;
+    width: 6vh;
+    margin: 2vh;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.side-bar-icon:hover {
+    scale: 1.4;
+}

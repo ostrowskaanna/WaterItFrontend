@@ -1,10 +1,24 @@
-div.dashboard-content {
-    background-color: lightgray;
+div.dashboard-page {
     width: 100vw;
     height: 100vh;
+    background-color: white;
+}
+
+div.dashboard-content-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+div.dashboard-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(238, 236, 236);
+    width: 85vw;
+    height: 80vh;
+    border-radius: 20px;
 }
 
 div.weather-forecast-componet-container {
@@ -12,5 +26,9 @@ div.weather-forecast-componet-container {
     height: 60%;
     border-radius: 20px;
     overflow: hidden;
-    
+}
+
+div.dashboard-container {
+    display: flex;
+    width: 100vw;
 }

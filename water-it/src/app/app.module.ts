@@ -12,6 +12,14 @@ import { WeatherForecastComponent } from './components/dashboardComponents/weath
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardPageComponent } from './components/dashboardComponents/dashboard-page/dashboard-page.component';
 import { TempPipe } from './pipes/temp.pipe';
+import { SideNavbarComponent } from './components/dashboardComponents/side-navbar/side-navbar.component';
+import { TopNavbarComponent } from './components/dashboardComponents/top-navbar/top-navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialComponentsModule } from './material-components/material-components.module';
+import { PercentagePipe } from './pipes/percentage.pipe';
+import { WindPipe } from './pipes/wind.pipe';
+import { RainPipe } from './pipes/rain.pipe';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -22,13 +30,21 @@ import { TempPipe } from './pipes/temp.pipe';
     NavbarComponent,
     WeatherForecastComponent,
     DashboardPageComponent,
-    TempPipe
+    TempPipe,
+    SideNavbarComponent,
+    TopNavbarComponent,
+    PercentagePipe,
+    WindPipe,
+    RainPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialComponentsModule,
+    NgApexchartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

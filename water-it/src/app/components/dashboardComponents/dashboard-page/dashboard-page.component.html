@@ -1,5 +1,24 @@
-<div class="dashboard-content">
-    <div class="weather-forecast-componet-container">
-        <app-weather-forecast></app-weather-forecast>
+<div class="dashboard-page">
+    <div class="top-navbar">
+        <app-top-navbar></app-top-navbar>
+    </div>
+    <div class="dashboard-container">
+        <div class="navbar">
+            <app-side-navbar></app-side-navbar>
+        </div>
+        <div class="dashboard-content-container">
+            <div class="dashboard-content">
+                <div class="weather-forecast-componet-container">
+                    <app-weather-forecast></app-weather-forecast>
+                </div>
+                <!-- Example of apx-chart usage -->
+                <apx-chart
+                    [series]="chartOptions.series"
+                    [chart]="chartOptions.chart"
+                    [xaxis]="chartOptions.xaxis"
+                    [title]="chartOptions.title">
+                </apx-chart>
+            </div>
+        </div>
     </div>
 </div>

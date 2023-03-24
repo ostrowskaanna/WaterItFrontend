@@ -5,8 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TempPipe implements PipeTransform {
 
-  transform(value: string | number): string {
-    return value + '°C';
+  transform(value: number): string {
+    return Math.round(value) + '°C';
   }
 
 }

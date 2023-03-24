@@ -1,13 +1,36 @@
 <div class="weather-section-container" *ngIf="weatherForecast$ | async as weather">
     <div class="current-weather-container">
+        <div class="basic-info"></div>
         <img class="current-weather-icon" [src]="weather.current.condition.icon" alt="">
         <p class="current-weather-temp">{{weather.current.temp_c | temp}}</p>
+        <div class="additional-info">
+            <div class="additional-info-row">
+                <div class="data-column">
+                    <mat-icon class="water-icon">water_drop</mat-icon>
+                    <p class="additional-info-label">{{weather.current.humidity | percentage}}</p>
+                </div>
+                <div class="data-column">
+                    <mat-icon class="water-icon">air</mat-icon>
+                    <p class="additional-info-label">{{weather.current.wind_kph | wind}}</p>
+                </div>
+            </div>
+            <div class="additional-info-row">
+                <div class="data-column">
+                    <mat-icon class="water-icon">umbrella</mat-icon>
+                    <p class="additional-info-label">{{weather.current.humidity | rain}}</p>
+                </div>
+                <div class="data-column right-column">
+                    <mat-icon class="water-icon">cloud</mat-icon>
+                    <p class="additional-info-label">{{weather.current.cloud | percentage}}</p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="weather-forecast-container">
         <ng-container *ngFor="let item of weather.forecast.forecastday">
             <div class="weather-day-forecast">
                 <img class="forecast-weather-icon" [src]="item.day.condition.icon" alt="">
-                <p>{{item.day.avgtemp_c | temp}}</p>
+                <p class="forecast-weather-temp">{{item.day.avgtemp_c | temp}}</p>
             </div>
         </ng-container>
     </div>
