@@ -22,8 +22,8 @@ div.dashboard-content {
 }
 
 div.weather-forecast-componet-container {
-    width: 20%;
-    height: 60%;
+    width: 18vw;
+    height: 46vh;
     border-radius: 20px;
     overflow: hidden;
 }
@@ -31,4 +31,15 @@ div.weather-forecast-componet-container {
 div.dashboard-container {
     display: flex;
     width: 100vw;
+}
+
+div.humidity-preview-component-container{
+    width: 18vw;
+    height: 18vw;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
 }

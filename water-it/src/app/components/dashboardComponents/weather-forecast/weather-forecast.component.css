@@ -21,7 +21,6 @@ div.additional-info {
     border-top: 1px solid lightgray;
     height: 100%;
     width: 90%;
-    margin-top: 2vh;
     padding-top: 2vh;
 }
 
@@ -88,4 +87,10 @@ p.forecast-weather-temp {
     width: 30%;
     justify-content: flex-start;
     margin-right: 1vw;
+}
+
+p.current-weather-city {
+    font-size: 2vh;
+    margin-top: 2vh;
+    color: grey;
 }

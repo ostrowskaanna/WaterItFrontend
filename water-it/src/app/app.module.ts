@@ -20,6 +20,7 @@ import { PercentagePipe } from './pipes/percentage.pipe';
 import { WindPipe } from './pipes/wind.pipe';
 import { RainPipe } from './pipes/rain.pipe';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { HumidityPreviewComponent } from './components/dashboardComponents/sensors-preview-components/humidity-preview/humidity-preview.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     PercentagePipe,
     WindPipe,
     RainPipe,
+    HumidityPreviewComponent,
   ],
   imports: [
     BrowserModule,
