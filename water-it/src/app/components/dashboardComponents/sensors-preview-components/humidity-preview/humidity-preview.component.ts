@@ -50,7 +50,7 @@ export class HumidityPreviewComponent implements OnInit {
       },
       fill: {
         type: "solid",
-        colors: "#333333"
+        colors: "#33B9DE"
       },
       labels: ["Air Humidity"]
     };

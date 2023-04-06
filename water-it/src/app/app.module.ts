@@ -21,6 +21,11 @@ import { WindPipe } from './pipes/wind.pipe';
 import { RainPipe } from './pipes/rain.pipe';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { HumidityPreviewComponent } from './components/dashboardComponents/sensors-preview-components/humidity-preview/humidity-preview.component';
+import { SoliMoisturePreviewComponent } from './components/dashboardComponents/sensors-preview-components/soli-moisture-preview/soli-moisture-preview.component';
+import { TemperaturePreviewComponent } from './components/dashboardComponents/sensors-preview-components/temperature-preview/temperature-preview.component';
+import { LuxPreviewComponent } from './components/dashboardComponents/sensors-preview-components/lux-preview/lux-preview.component';
+import { AirPolutionPreviewComponent } from './components/dashboardComponents/sensors-preview-components/air-polution-preview/air-polution-preview.component';
+import { RainPreviewComponent } from './components/dashboardComponents/sensors-preview-components/rain-preview/rain-preview.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +43,11 @@ import { HumidityPreviewComponent } from './components/dashboardComponents/senso
     WindPipe,
     RainPipe,
     HumidityPreviewComponent,
+    SoliMoisturePreviewComponent,
+    TemperaturePreviewComponent,
+    LuxPreviewComponent,
+    AirPolutionPreviewComponent,
+    RainPreviewComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,7 @@ import { WeatherForecastDTO } from 'src/app/models/weather-forecast-dto.model';
 export class WeatherForecastComponent implements OnInit {
 
   weatherForecast$: Observable<WeatherForecastDTO> | undefined;
-  city: string = "Krakow";
+  city: string = "Cracow";
   numberOfDays: number = 5;
 
   constructor(private http: HttpClient) { }

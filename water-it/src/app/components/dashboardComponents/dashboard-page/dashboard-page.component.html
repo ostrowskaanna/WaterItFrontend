@@ -8,11 +8,34 @@
         </div>
         <div class="dashboard-content-container">
             <div class="dashboard-content">
-                <div class="weather-forecast-componet-container">
-                    <app-weather-forecast></app-weather-forecast>
+                <div class="left-section">
+                    <div class="weather-forecast-componet-container">
+                        <app-weather-forecast></app-weather-forecast>
+                    </div>
                 </div>
-                <div class="humidity-preview-component-container">
-                    <app-humidity-preview></app-humidity-preview>
+                <div class="right-section">
+                    <div class="right-section-row">
+                        <div class="sensor-preview-component-container">
+                            <app-humidity-preview></app-humidity-preview>
+                        </div>
+                        <div class="sensor-preview-component-container">
+                            <app-soli-moisture-preview></app-soli-moisture-preview>
+                        </div>
+                        <div class="sensor-preview-component-container">
+                            <app-lux-preview></app-lux-preview>
+                        </div>
+                    </div>
+                    <div class="right-section-row">
+                        <div class="sensor-preview-component-container">
+                            <app-humidity-preview></app-humidity-preview>
+                        </div>
+                        <div class="sensor-preview-component-container">
+                            <app-soli-moisture-preview></app-soli-moisture-preview>
+                        </div>
+                        <div class="sensor-preview-component-container">
+                            <app-lux-preview></app-lux-preview>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,0 +1,9 @@
+.soil-moisture-preview-chart-container {
+    background-color: white;
+    transition: 0.7s;
+}
+
+.soil-moisture-preview-chart-container:hover {
+    scale: 1.4;
+    cursor: pointer;
+}

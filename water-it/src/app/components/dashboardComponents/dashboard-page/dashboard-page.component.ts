@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChartComponent } from 'ng-apexcharts';
 
 @Component({
   selector: 'app-dashboard-page',
