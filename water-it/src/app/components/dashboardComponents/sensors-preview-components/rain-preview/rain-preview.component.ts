@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ChartComponent } from 'ng-apexcharts';
 
 @Component({
   selector: 'app-rain-preview',
@@ -7,7 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RainPreviewComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild("chart") chart!: ChartComponent;
+  public chartOptions: Partial<any>;
+
+  constructor() { 
+    this.chartOptions = {
+      series: [37],
+      chart: {
+        height: 250,
+        type: "radialBar"
+      },
+      plotOptions: {
+        radialBar: {
+          hollow: {
+            size: "50%"
+          }
+        }
+      },
+      fill: {
+        type: "solid",
+        colors: "#333333"
+      },
+      labels: ["Rain "],
+    };
+  }
 
   ngOnInit(): void {
   }

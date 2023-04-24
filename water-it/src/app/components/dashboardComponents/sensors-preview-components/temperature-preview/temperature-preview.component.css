@@ -1,0 +1,14 @@
+.temperature-preview-chart-container {
+    background-color: white;
+    transition: 0.7s;
+}
+
+.temperature-preview-chart-container:hover {
+    scale: 1.4;
+    cursor: pointer;
+}
+
+.temperature-label {
+    color: #008FFB;
+    font-size: 13pt;
+}

@@ -1,0 +1,9 @@
+.air-polution-preview-chart-container {
+    background-color: white;
+    transition: 0.7s;
+}
+
+.air-polution-preview-chart-container:hover {
+    scale: 1.4;
+    cursor: pointer;
+}

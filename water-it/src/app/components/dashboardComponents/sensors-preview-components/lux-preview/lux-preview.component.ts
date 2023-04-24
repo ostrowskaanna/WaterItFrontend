@@ -29,7 +29,7 @@ export class LuxPreviewComponent implements OnInit {
         type: "solid",
         colors: "#eeff00"
       },
-      labels: ["Sun Level"]
+      labels: ["Sun Level"],
     };
   }
 
