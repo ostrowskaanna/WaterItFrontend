@@ -1,1 +1,1 @@
-http://*/* https://:splat 301
+http://*/* http://:splat 200
