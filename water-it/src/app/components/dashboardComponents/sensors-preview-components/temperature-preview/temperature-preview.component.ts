@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-temperature-preview',
@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemperaturePreviewComponent implements OnInit {
 
-  temperature: number = 21.2;
+  @Input() data: any;
 
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

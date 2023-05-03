@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { WeatherApiConstants } from 'src/app/constants/weather-api.constants';
-import { WeatherForecastDTO } from 'src/app/models/weather-forecast-dto.model';
+import { WeatherForecastDTO } from 'src/app/models/weather-models/weather-forecast-dto.model';
 
 @Component({
   selector: 'app-weather-forecast',

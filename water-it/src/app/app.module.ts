@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
@@ -9,7 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { WeatherForecastComponent } from './components/dashboardComponents/weather-forecast/weather-forecast.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardPageComponent } from './components/dashboardComponents/dashboard-page/dashboard-page.component';
 import { TempPipe } from './pipes/temp.pipe';
 import { SideNavbarComponent } from './components/dashboardComponents/side-navbar/side-navbar.component';
@@ -26,6 +25,8 @@ import { TemperaturePreviewComponent } from './components/dashboardComponents/se
 import { LuxPreviewComponent } from './components/dashboardComponents/sensors-preview-components/lux-preview/lux-preview.component';
 import { AirPolutionPreviewComponent } from './components/dashboardComponents/sensors-preview-components/air-polution-preview/air-polution-preview.component';
 import { RainPreviewComponent } from './components/dashboardComponents/sensors-preview-components/rain-preview/rain-preview.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ApiInterceptor } from './interceptors/api.interceptor'
 
 @NgModule({
   declarations: [
@@ -57,8 +58,11 @@ import { RainPreviewComponent } from './components/dashboardComponents/sensors-p
     BrowserAnimationsModule,
     MaterialComponentsModule,
     NgApexchartsModule,
+    MatFormFieldModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

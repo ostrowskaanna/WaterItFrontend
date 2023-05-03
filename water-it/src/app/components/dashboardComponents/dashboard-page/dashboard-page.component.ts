@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Measurments } from 'src/app/models/measurments.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -7,9 +11,16 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class DashboardPageComponent implements OnInit {
 
-  constructor() { }
+  measurments$!: Observable<Measurments> | undefined;
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getMeasurements();
+  }
+
+  getMeasurements(): void {
+    this.measurments$ = this.http.get<Measurments>(environment.apiUrl + 'measurement/latest');
   }
 
 }

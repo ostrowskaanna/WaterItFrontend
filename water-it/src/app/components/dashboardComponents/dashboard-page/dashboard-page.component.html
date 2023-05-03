@@ -16,24 +16,24 @@
                 <div class="right-section">
                     <div class="right-section-row">
                         <div class="sensor-preview-component-container">
-                            <app-humidity-preview></app-humidity-preview>
+                            <app-humidity-preview [data]="measurments$ | async"></app-humidity-preview>
                         </div>
                         <div class="sensor-preview-component-container">
-                            <app-soli-moisture-preview></app-soli-moisture-preview>
+                            <app-soli-moisture-preview [data]="measurments$ | async"></app-soli-moisture-preview>
                         </div>
                         <div class="sensor-preview-component-container">
-                            <app-lux-preview></app-lux-preview>
+                            <app-lux-preview [data]="measurments$ | async"></app-lux-preview>
                         </div>
                     </div>
                     <div class="right-section-row">
                         <div class="sensor-preview-component-container">
-                            <app-air-polution-preview></app-air-polution-preview>
+                            <app-air-polution-preview [data]="measurments$ | async"></app-air-polution-preview>
                         </div>
                         <div class="sensor-preview-component-container">
-                            <app-temperature-preview></app-temperature-preview>
+                            <app-temperature-preview [data]="measurments$ | async"></app-temperature-preview>
                         </div>
                         <div class="sensor-preview-component-container">
-                            <app-lux-preview></app-lux-preview>
+                            <app-lux-preview [data]="measurments$ | async"></app-lux-preview>
                         </div>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ div.dashboard-content {
 
 div.weather-forecast-componet-container {
     width: 18vw;
-    height: 46vh;
+    height: 60vh;
     border-radius: 20px;
     overflow: hidden;
 }

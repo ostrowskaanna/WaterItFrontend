@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import * as ApexCharts from 'apexcharts';
 import { ChartComponent } from 'ng-apexcharts';
 import { ChartOptions } from 'src/app/models/chart-options.model';
+import { Measurments } from 'src/app/models/measurments.model';
 
 @Component({
   selector: 'app-humidity-preview',
@@ -12,6 +13,7 @@ export class HumidityPreviewComponent implements OnInit {
 
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions!: Partial<any>;
+  @Input() data: any;
 
   constructor() {
     this.chartOptions = {

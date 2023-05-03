@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ChartComponent } from 'ng-apexcharts';
 
 @Component({
@@ -10,6 +10,7 @@ export class AirPolutionPreviewComponent implements OnInit {
 
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions: Partial<any>;
+  @Input() data: any;
 
   constructor() { 
     this.chartOptions = {
