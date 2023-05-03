@@ -1,1 +1,1 @@
-http://*/* http://:splat 200
+/api/* http://107.152.36.118:8080/waterit/api/:splat 200!
