@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { ChartComponent } from 'ng-apexcharts';
 
 @Component({
@@ -6,7 +6,7 @@ import { ChartComponent } from 'ng-apexcharts';
   templateUrl: './lux-preview.component.html',
   styleUrls: ['./lux-preview.component.css']
 })
-export class LuxPreviewComponent implements OnInit {
+export class LuxPreviewComponent implements OnChanges {
 
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions: Partial<any>;
@@ -14,7 +14,7 @@ export class LuxPreviewComponent implements OnInit {
 
   constructor() { 
     this.chartOptions = {
-      series: [87],
+      series: [0],
       chart: {
         height: 250,
         type: "radialBar"
@@ -34,7 +34,11 @@ export class LuxPreviewComponent implements OnInit {
     };
   }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.data && this.data) {
+      console.log(this.data)
+      this.chartOptions.series = [this.data.lightIntensity]
+    }
   }
 
 }

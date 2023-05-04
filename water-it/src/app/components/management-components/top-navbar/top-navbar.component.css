@@ -33,6 +33,15 @@ div.navbar-content {
     transition: 0.3s;
 }
 
+.top-bar-icon-notification {
+    color: white;
+    font-size: 4vh;
+    height: 4vh;
+    width: 4vh;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 .top-bar-icon:hover {
     scale: 1.4;
 }
@@ -46,7 +55,7 @@ div.navbar-content {
 .notification-number-container {
     position: relative;
     right: 7%;
-    top: 10%;
+    top: -20px;
     width: 2vh;
     height: 2vh;
     border-radius: 50%;

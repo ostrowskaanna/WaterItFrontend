@@ -27,7 +27,7 @@ export class AuthService {
         localStorage.setItem('accessToken', res.accessToken);
         localStorage.setItem('refreshToken', res.refreshToken);
         this.badPassword = false;
-        this.router.navigate(["/dashboard"]);
+        this.router.navigate(["/management"]);
       }
     })
   }
@@ -40,7 +40,7 @@ export class AuthService {
           localStorage.setItem('accessToken', res.accessToken);
           localStorage.setItem('refreshToken', res.refreshToken);
           this.badPassword = false;
-          this.router.navigate(["/dashboard"]);
+          this.router.navigate(["/management"]);
         }
           else{
             this.badPassword = true;

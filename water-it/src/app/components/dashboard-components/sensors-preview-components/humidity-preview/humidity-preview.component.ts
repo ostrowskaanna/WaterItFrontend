@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import * as ApexCharts from 'apexcharts';
 import { ChartComponent } from 'ng-apexcharts';
 import { ChartOptions } from 'src/app/models/chart-options.model';
@@ -9,7 +9,7 @@ import { Measurments } from 'src/app/models/measurments.model';
   templateUrl: './humidity-preview.component.html',
   styleUrls: ['./humidity-preview.component.css']
 })
-export class HumidityPreviewComponent implements OnInit {
+export class HumidityPreviewComponent implements OnChanges {
 
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions!: Partial<any>;
@@ -17,7 +17,7 @@ export class HumidityPreviewComponent implements OnInit {
 
   constructor() {
     this.chartOptions = {
-      series: [11],
+      series: [0],
       chart: {
         type: "radialBar",
       },
@@ -58,7 +58,10 @@ export class HumidityPreviewComponent implements OnInit {
     };
    }
 
-  ngOnInit(): void {
+   ngOnChanges(changes: SimpleChanges) {
+    if(changes.data && this.data) {
+      this.chartOptions.series = [this.data.humidity * 100]
+    }
   }
 
 }

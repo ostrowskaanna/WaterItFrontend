@@ -1,0 +1,14 @@
+.rain-preview-chart-container {
+    background-color: white;
+    transition: 0.7s;
+}
+
+.rain-preview-chart-container:hover {
+    scale: 1.4;
+    cursor: pointer;
+}
+
+.rain-label {
+    color: #008FFB;
+    font-size: 13pt;
+}

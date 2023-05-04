@@ -7,26 +7,30 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { WeatherForecastComponent } from './components/dashboardComponents/weather-forecast/weather-forecast.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { DashboardPageComponent } from './components/dashboardComponents/dashboard-page/dashboard-page.component';
 import { TempPipe } from './pipes/temp.pipe';
-import { SideNavbarComponent } from './components/dashboardComponents/side-navbar/side-navbar.component';
-import { TopNavbarComponent } from './components/dashboardComponents/top-navbar/top-navbar.component';
+import { SideNavbarComponent } from './components/management-components/side-navbar/side-navbar.component';
+import { TopNavbarComponent } from './components/management-components/top-navbar/top-navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponentsModule } from './material-components/material-components.module';
 import { PercentagePipe } from './pipes/percentage.pipe';
 import { WindPipe } from './pipes/wind.pipe';
 import { RainPipe } from './pipes/rain.pipe';
 import { NgApexchartsModule } from 'ng-apexcharts';
-import { HumidityPreviewComponent } from './components/dashboardComponents/sensors-preview-components/humidity-preview/humidity-preview.component';
-import { SoliMoisturePreviewComponent } from './components/dashboardComponents/sensors-preview-components/soli-moisture-preview/soli-moisture-preview.component';
-import { TemperaturePreviewComponent } from './components/dashboardComponents/sensors-preview-components/temperature-preview/temperature-preview.component';
-import { LuxPreviewComponent } from './components/dashboardComponents/sensors-preview-components/lux-preview/lux-preview.component';
-import { AirPolutionPreviewComponent } from './components/dashboardComponents/sensors-preview-components/air-polution-preview/air-polution-preview.component';
-import { RainPreviewComponent } from './components/dashboardComponents/sensors-preview-components/rain-preview/rain-preview.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import { ApiInterceptor } from './interceptors/api.interceptor'
+import { ApiInterceptor } from './interceptors/api.interceptor';
+import { ManagementPageComponent } from './components/management-components/management-page/management-page.component'
+import { WeatherForecastComponent } from './components/dashboard-components/weather-forecast/weather-forecast.component';
+import { DashboardPageComponent } from './components/dashboard-components/dashboard-page/dashboard-page.component';
+import { AirPolutionPreviewComponent } from './components/dashboard-components/sensors-preview-components/air-polution-preview/air-polution-preview.component';
+import { HumidityPreviewComponent } from './components/dashboard-components/sensors-preview-components/humidity-preview/humidity-preview.component';
+import { LuxPreviewComponent } from './components/dashboard-components/sensors-preview-components/lux-preview/lux-preview.component';
+import { RainPreviewComponent } from './components/dashboard-components/sensors-preview-components/rain-preview/rain-preview.component';
+import { SoliMoisturePreviewComponent } from './components/dashboard-components/sensors-preview-components/soli-moisture-preview/soli-moisture-preview.component';
+import { TemperaturePreviewComponent } from './components/dashboard-components/sensors-preview-components/temperature-preview/temperature-preview.component';
+import { ManageDevicesPageComponent } from './components/manage-devices-components/manage-devices-page/manage-devices-page.component';
+import { FieldsMapComponent } from './components/manage-devices-components/fields-map/fields-map.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
@@ -49,6 +53,9 @@ import { ApiInterceptor } from './interceptors/api.interceptor'
     LuxPreviewComponent,
     AirPolutionPreviewComponent,
     RainPreviewComponent,
+    ManagementPageComponent,
+    ManageDevicesPageComponent,
+    FieldsMapComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +65,8 @@ import { ApiInterceptor } from './interceptors/api.interceptor'
     BrowserAnimationsModule,
     MaterialComponentsModule,
     NgApexchartsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    LeafletModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }

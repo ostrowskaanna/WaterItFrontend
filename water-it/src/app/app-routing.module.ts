@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardPageComponent } from './components/dashboardComponents/dashboard-page/dashboard-page.component';
-import { WeatherForecastComponent } from './components/dashboardComponents/weather-forecast/weather-forecast.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ManagementPageComponent } from './components/management-components/management-page/management-page.component';
+import { DashboardPageComponent } from './components/dashboard-components/dashboard-page/dashboard-page.component';
+import { ManageDevicesPageComponent } from './components/manage-devices-components/manage-devices-page/manage-devices-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'dashboard', component: DashboardPageComponent }
+  { path: 'management', component: ManagementPageComponent, children: [
+    { path: '', component: DashboardPageComponent, outlet: 'management-page' },
+    { path: 'dashboard', component: DashboardPageComponent, outlet: 'management-page'},
+    { path: 'devices', component: ManageDevicesPageComponent, outlet: 'management-page'},
+  ]}
 ];
 
 

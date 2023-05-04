@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { ChartComponent } from 'ng-apexcharts';
 import { ChartOptions } from 'src/app/models/chart-options.model';
 
@@ -7,7 +7,7 @@ import { ChartOptions } from 'src/app/models/chart-options.model';
   templateUrl: './soli-moisture-preview.component.html',
   styleUrls: ['./soli-moisture-preview.component.css']
 })
-export class SoliMoisturePreviewComponent implements OnInit {
+export class SoliMoisturePreviewComponent implements OnChanges {
 
   @ViewChild("chart") chart!: ChartComponent;
   public chartOptions: Partial<any>;
@@ -15,7 +15,7 @@ export class SoliMoisturePreviewComponent implements OnInit {
 
   constructor() {
     this.chartOptions = {
-      series: [63],
+      series: [0],
       chart: {
         height: 250,
         type: "radialBar"
@@ -35,7 +35,10 @@ export class SoliMoisturePreviewComponent implements OnInit {
     };
    }
 
-  ngOnInit(): void {
+   ngOnChanges(changes: SimpleChanges) {
+    if(changes.data && this.data) {
+      this.chartOptions.series = [this.data.moistureHumidity * 100]
+    }
   }
 
 }
