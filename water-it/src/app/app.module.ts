@@ -31,6 +31,7 @@ import { TemperaturePreviewComponent } from './components/dashboard-components/s
 import { ManageDevicesPageComponent } from './components/manage-devices-components/manage-devices-page/manage-devices-page.component';
 import { FieldsMapComponent } from './components/manage-devices-components/fields-map/fields-map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { DevicesListItemComponent } from './components/manage-devices-components/devices-list-item/devices-list-item.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     ManagementPageComponent,
     ManageDevicesPageComponent,
     FieldsMapComponent,
+    DevicesListItemComponent,
   ],
   imports: [
     BrowserModule,

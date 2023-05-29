@@ -1,5 +1,43 @@
-div.fields-map-container {
-    width: 400px;
-    height: 400px;
+div.manage-devices-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+div.manage-devices-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(238, 236, 236);
+    width: 85vw;
+    height: 80vh;
+    border-radius: 20px;
     overflow: hidden;
+}
+
+div.left-side-content {
+    background-color: #33B9DE;
+    width: 30%;
+    height: 100%;
+}
+
+div.fields-map-container {
+    width: 70%;
+    height: 100%;
+    overflow: hidden;
+}
+
+div.header {
+    color: white;
+    width: 100%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid white;
+}
+
+p.title {
+    font-size: 5vh;
+    margin-left: 1vw;
 }
