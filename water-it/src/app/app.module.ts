@@ -36,6 +36,8 @@ import { FieldFormComponent } from './components/manage-devices-components/field
 import { MatDialogModule } from '@angular/material/dialog';
 import { DeviceFormComponent } from './components/manage-devices-components/device-form/device-form.component';
 import { WaterRequirementPredictionComponent } from './components/dashboard-components/water-requirement-prediction/water-requirement-prediction.component';
+import { DevicesListItemComponent } from './components/manage-devices-components/devices-list-item/devices-list-item.component';
+
 
 @NgModule({
   declarations: [
@@ -65,6 +67,7 @@ import { WaterRequirementPredictionComponent } from './components/dashboard-comp
     FieldFormComponent,
     DeviceFormComponent,
     WaterRequirementPredictionComponent,
+    DevicesListItemComponent
   ],
   imports: [
     BrowserModule,
