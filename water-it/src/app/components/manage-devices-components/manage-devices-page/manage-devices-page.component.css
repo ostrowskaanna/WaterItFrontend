@@ -14,13 +14,13 @@ div.fields-map-container{
 }
 
 button{
-    font-size: 2vh;
+    font-size: 4vh;
     height: 5vh;
-    width: 10vw;
+    width: 5vh;
     border-radius: 30px;
     border-color: transparent;
-    background-color: #10C75B;
-    color: white;
+    background-color: white;
+    color: #33B9DE;
     cursor: pointer;
     margin-left: 1vw;
     margin-right: 1vw;
@@ -28,7 +28,8 @@ button{
 }
 
 button:hover{
-    background-color: #33B9DE;
+    background-color: #10C75B;
+    color: white;
     transition: 0.7s;
 }
 
@@ -36,7 +37,8 @@ div.buttons-container{
     display: flex;
     justify-content: center;
     align-items: center;
-=======
+}
+
 div.manage-devices-content-container {
     display: flex;
     justify-content: center;
@@ -74,6 +76,7 @@ div.header {
     display: flex;
     align-items: center;
     border-bottom: 3px solid white;
+    justify-content: space-around;
 }
 
 p.title {

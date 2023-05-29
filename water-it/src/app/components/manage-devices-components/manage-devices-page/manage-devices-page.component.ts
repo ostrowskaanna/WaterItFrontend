@@ -15,18 +15,10 @@ export class ManageDevicesPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  openDialog(buttonType: number) {
-    let componentToOpen: any;
-
-    if (buttonType == 0) {
-      componentToOpen = FieldFormComponent;
-    } 
-    else if (buttonType == 1) {
-      componentToOpen = DeviceFormComponent;
-    }
+  openDialog(): void {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
-    const dialogRef = this.dialog.open(componentToOpen, {
+    const dialogRef = this.dialog.open(FieldFormComponent, {
       width: '40vw',
       height: '70vh'
     });
