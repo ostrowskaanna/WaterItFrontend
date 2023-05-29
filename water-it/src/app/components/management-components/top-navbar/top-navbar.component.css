@@ -3,6 +3,7 @@
     height: 10vh;
     background-color: #33B9DE;
     display: flex;
+    justify-content: space-between;
 }
 
 .logo-container {
@@ -16,11 +17,12 @@ img.logo {
 }
 
 div.navbar-content {
-    width: 95%;
+    width: 40%;
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-right: 5vw;
 }
 
 .top-bar-icon {
@@ -70,4 +72,24 @@ div.navbar-content {
     margin: 0;
     font-size: 1vh;
     cursor: pointer;
+}
+
+button{
+    font-size: 2vh;
+    height: 5vh;
+    width: 10vw;
+    border-radius: 30px;
+    border-color: transparent;
+    background-color: white;
+    color: #10C75B;
+    cursor: pointer;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-family: "Sofia", sans-serif;
+}
+
+button:hover{
+    background-color: #10C75B;
+    color: white;
+    transition: 0.7s;
 }

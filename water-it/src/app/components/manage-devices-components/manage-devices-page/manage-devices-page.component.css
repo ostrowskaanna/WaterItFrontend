@@ -1,5 +1,39 @@
-div.fields-map-container {
+div.devices-page{
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+div.fields-map-container{
     width: 400px;
     height: 400px;
     overflow: hidden;
+}
+
+button{
+    font-size: 2vh;
+    height: 5vh;
+    width: 10vw;
+    border-radius: 30px;
+    border-color: transparent;
+    background-color: #10C75B;
+    color: white;
+    cursor: pointer;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-family: "Sofia", sans-serif;
+}
+
+button:hover{
+    background-color: #33B9DE;
+    transition: 0.7s;
+}
+
+div.buttons-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-top-navbar',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavbarComponent implements OnInit {
 
-  constructor() { }
+  username: string | null;
 
-  ngOnInit(): void {
+  constructor(public authService: AuthService) { 
+    this.username = window.localStorage.getItem('username');
+  }
+
+  ngOnInit(): void { }
+
+  logOutButtonClick() {
+    if(this.authService.isLoggedIn)
+      this.authService.doLogout();
   }
 
 }

@@ -13,6 +13,10 @@ export class SideNavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  personClick(): void {
+    this.router.navigate(['/management', { outlets: { 'management-page': ['user-panel'] } }]);
+  }
+
   dashboardClick(): void {
     this.router.navigate(['/management', { outlets: { 'management-page': ['dashboard'] } }]);
   }
@@ -20,5 +24,4 @@ export class SideNavbarComponent implements OnInit {
   devicesClick(): void {
     this.router.navigate(['/management', { outlets: { 'management-page': ['devices'] } }]);
   }
-
 }
