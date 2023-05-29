@@ -1,0 +1,99 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+div.field-form-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+div.field-form-container{
+    height: 60vh;
+    width: 30vw;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title, .error {
+    color: #10C75B;
+    text-align: center;
+}
+
+
+form.field-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input.field-fields{
+    height: 4vh;
+    width: 20vw;
+    margin: 1vh;
+    border-radius: 20px;
+    border: 5px solid #10C75B;
+    padding-left: 1vw;
+    transition: 0.3s;
+}
+
+select.field-fields{
+    height: 5.5vh;
+    width: 21.5vw;
+    margin: 1vh;
+    border-radius: 20px;
+    border: 5px solid #10C75B;
+    padding-left: 1vw;
+    transition: 0.3s;
+    color: gray;
+    text-align: center;
+}
+
+.device-info {
+    color: #33B9DE;
+    text-align: center;
+    font-weight: bold;
+}
+
+p.dont-have-acc, span.collored-words{
+    font-size: 2vh;
+    margin: 10px;
+    color: black;
+}
+
+span.collored-words{
+    color: #10C75B;
+    cursor: pointer;
+}
+
+button{
+    font-size: 2vh;
+    height: 4vh;
+    width: 9vw;
+    border-radius: 30px;
+    border-color: transparent;
+    background-color: #10C75B;
+    color: white;
+    cursor: pointer;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-family: "Sofia", sans-serif;
+}
+
+button:hover{
+    background-color: #33B9DE;
+    transition: 0.7s;
+}
+
+input{
+    text-align: center;
+}

@@ -23,9 +23,19 @@ div.dashboard-content {
 
 div.weather-forecast-componet-container {
     width: 18vw;
-    height: 60vh;
+    height: 52vh;
     border-radius: 20px;
     overflow: hidden;
+}
+
+div.prediction-component-container {
+    width: 18vw;
+    height: 22vh;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 div.dashboard-container {
@@ -48,7 +58,8 @@ div.left-section {
     height: 100%;
     width: 30%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
 

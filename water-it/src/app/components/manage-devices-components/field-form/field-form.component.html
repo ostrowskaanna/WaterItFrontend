@@ -1,0 +1,29 @@
+<div id="field-form-content">
+    <div class="field-form-container">
+        <h1 class="title">Enter data for your field</h1>
+        <form [formGroup]="newFieldForm" class="field-form" (ngSubmit)="newFieldForm.valid && onSubmit()">
+            
+            <input type="text" class="field-fields" placeholder="Name" formControlName="name" required>
+            <div class="error" *ngIf="newFieldForm.get('name')?.hasError('required')">
+                Name is required.
+            </div>
+            <input type="number" class="field-fields" placeholder="Latitude" formControlName="latitude">
+            <input type="number" class="field-fields" placeholder="Longitude" formControlName="longitude">
+            <select class="field-fields" placeholder="Crop Type" formControlName="actualCropType" required>
+                <option value="" disabled selected>Select Crop Type</option>
+                <option *ngFor="let cropType of cropTypes">{{ cropType }}</option>
+            </select>
+            <div class="error" *ngIf="newFieldForm.get('actualCropType')?.hasError('required')">
+                Crop Type is required.
+            </div>
+
+            <div formGroupName="addDeviceRequest">
+                <input type="text" class="field-fields" placeholder="Device Id" formControlName="externalDeviceId" style="border-color: #33B9DE;">
+            </div>
+            <p class="device-info">You can connect device now or later</p>
+
+            <button class="add-button" type="submit">Add</button>
+        
+        </form>
+    </div>
+</div>

@@ -1,7 +1,6 @@
 div.management-page {
     width: 100vw;
     height: 100vh;
-    background-color: white;
 }
 
 div.components-content {
@@ -22,6 +21,11 @@ div.dashboard-content {
 }
 
 div.management-page-container {
+    display: flex;
+    width: 100vw;
+}
+
+div.top-navbar {
     display: flex;
     width: 100vw;
 }

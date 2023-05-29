@@ -28,6 +28,7 @@ export class AuthService {
         localStorage.setItem('refreshToken', res.refreshToken);
         this.badPassword = false;
         this.router.navigate(["/management"]);
+        localStorage.setItem('username', registerDTO.username);
       }
     })
   }
@@ -41,6 +42,7 @@ export class AuthService {
           localStorage.setItem('refreshToken', res.refreshToken);
           this.badPassword = false;
           this.router.navigate(["/management"]);
+          localStorage.setItem('username', user.username);
         }
           else{
             this.badPassword = true;
@@ -60,7 +62,8 @@ export class AuthService {
     let removeRefreshToken = localStorage.removeItem('refreshToken');
     if (removeToken == null && removeRefreshToken == null) {
       this.router.navigate(['login']);
+      localStorage.removeItem('username');
     }
   }
-  
+
 }

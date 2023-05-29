@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { FieldFormComponent } from '../field-form/field-form.component';
+import { DeviceFormComponent } from '../device-form/device-form.component';
 
 @Component({
   selector: 'app-manage-devices-page',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageDevicesPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    const dialogRef = this.dialog.open(FieldFormComponent, {
+      width: '40vw',
+      height: '70vh'
+    });
   }
 
 }

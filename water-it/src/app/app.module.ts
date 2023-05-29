@@ -31,7 +31,13 @@ import { TemperaturePreviewComponent } from './components/dashboard-components/s
 import { ManageDevicesPageComponent } from './components/manage-devices-components/manage-devices-page/manage-devices-page.component';
 import { FieldsMapComponent } from './components/manage-devices-components/fields-map/fields-map.component';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { UserPanelComponent } from './components/user-panel/user-panel.component';
+import { FieldFormComponent } from './components/manage-devices-components/field-form/field-form.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DeviceFormComponent } from './components/manage-devices-components/device-form/device-form.component';
+import { WaterRequirementPredictionComponent } from './components/dashboard-components/water-requirement-prediction/water-requirement-prediction.component';
 import { DevicesListItemComponent } from './components/manage-devices-components/devices-list-item/devices-list-item.component';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +63,11 @@ import { DevicesListItemComponent } from './components/manage-devices-components
     ManagementPageComponent,
     ManageDevicesPageComponent,
     FieldsMapComponent,
-    DevicesListItemComponent,
+    UserPanelComponent,
+    FieldFormComponent,
+    DeviceFormComponent,
+    WaterRequirementPredictionComponent,
+    DevicesListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +78,8 @@ import { DevicesListItemComponent } from './components/manage-devices-components
     MaterialComponentsModule,
     NgApexchartsModule,
     MatFormFieldModule,
-    LeafletModule
+    LeafletModule,
+    MatDialogModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }

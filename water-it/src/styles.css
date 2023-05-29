@@ -10,3 +10,8 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-dialog-container {
+    background-color: white;
+    border: 5px solid #33B9DE;
+}
