@@ -20,7 +20,7 @@ button{
     border-radius: 30px;
     border-color: transparent;
     background-color: white;
-    color: #33B9DE;
+    color: #10C75B;
     cursor: pointer;
     margin-left: 1vw;
     margin-right: 1vw;
@@ -77,9 +77,11 @@ div.header {
     align-items: center;
     border-bottom: 3px solid white;
     justify-content: space-around;
+    text-align: center;
 }
 
 p.title {
     font-size: 5vh;
     margin-left: 1vw;
+    margin-top: 2vh;
 }

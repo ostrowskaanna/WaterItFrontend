@@ -18,7 +18,7 @@ export class FieldFormComponent implements OnInit {
     longitude: new FormControl(''),
     actualCropType: new FormControl('', Validators.required),
     addDeviceRequest: new FormGroup({
-      externalDeviceId: new FormControl('')
+      externalDeviceId: new FormControl('', Validators.required)
     })
   });
 
@@ -31,7 +31,6 @@ export class FieldFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCropTypes();
-    console.log(this.authService.currentUser);
   }
 
   getCropTypes(): void {
@@ -45,16 +44,14 @@ export class FieldFormComponent implements OnInit {
   }
 
   onSubmit() {
-
-    //
     const formData = this.newFieldForm.getRawValue();
     console.log(formData);
-    // this.http.post(environment.apiUrl + 'fields', formData).subscribe(
-    //   (response) => {
-    //     console.log(response);
-    //   },
-    //   (error) => {
-    //     console.error(error);
-    //   });
+    this.http.post(environment.apiUrl + 'fields', formData).subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.error(error);
+      });
   }
 }

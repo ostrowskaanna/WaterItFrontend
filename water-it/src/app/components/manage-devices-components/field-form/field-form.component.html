@@ -18,9 +18,11 @@
             </div>
 
             <div formGroupName="addDeviceRequest">
-                <input type="text" class="field-fields" placeholder="Device Id" formControlName="externalDeviceId" style="border-color: #33B9DE;">
+                <input type="text" class="field-fields" placeholder="External Device Id" formControlName="externalDeviceId" style="border-color: #33B9DE;" required="">
             </div>
-            <p class="device-info">You can connect device now or later</p>
+            <div class="error" *ngIf="this.newFieldForm.get('addDeviceRequest')?.get('externalDeviceId')?.hasError('required')" style="color: #33B9DE;"> 
+                Device is required.
+            </div>
 
             <button class="add-button" type="submit">Add</button>
         

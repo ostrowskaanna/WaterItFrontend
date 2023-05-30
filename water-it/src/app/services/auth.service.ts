@@ -14,6 +14,8 @@ export class AuthService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser: any;
   badPassword: boolean = false;
+  selectedFieldId: number | undefined;
+
   constructor(private http: HttpClient, public router: Router) {
 
   }
@@ -63,7 +65,13 @@ export class AuthService {
     if (removeToken == null && removeRefreshToken == null) {
       this.router.navigate(['login']);
       localStorage.removeItem('username');
+      localStorage.removeItem('fieldId');
     }
+  }
+
+  selectField(fieldId: number) {
+    localStorage.setItem('fieldId', fieldId.toString());
+    this.selectedFieldId = fieldId;
   }
 
 }

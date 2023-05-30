@@ -22,7 +22,7 @@ div.navbar-content {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-right: 5vw;
+    margin-right: 4vw;
 }
 
 .top-bar-icon {
@@ -49,9 +49,10 @@ div.navbar-content {
 }
 
 .user-name {
-    font-size: 2vh;
+    font-size: 3vh;
     color: white;
-    margin: 0;
+    margin-right: 2vw;
+    margin-top: 2vh;
 }
 
 .notification-number-container {

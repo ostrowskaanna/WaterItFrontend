@@ -1,0 +1,12 @@
+.fields-list-item-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.field-name {
+    color: white;
+    font-size: 4vh;
+    margin-top: 1vh;
+}
