@@ -9,7 +9,7 @@ import { Field } from 'src/app/models/field.model';
 export class FieldsListItemComponent implements OnInit {
 
   @Input() data: Field | undefined;
-  @Input() selectedFieldId: number | undefined;
+  @Input() selectedFieldId: number | undefined | null;
   @Output() selectField = new EventEmitter<number>();
 
   constructor() { }

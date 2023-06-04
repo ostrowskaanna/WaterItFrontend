@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Measurments } from 'src/app/models/measurments.model';
 import { environment } from 'src/environments/environment';
 import { AuthService } from 'src/app/services/auth.service';
+import { SelectionService } from 'src/app/services/selection.service';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -13,14 +14,14 @@ import { AuthService } from 'src/app/services/auth.service';
 export class DashboardPageComponent implements OnInit {
 
   measurments$!: Observable<Measurments> | undefined;
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService, private selectionService: SelectionService) { }
 
   ngOnInit(): void {
     this.getMeasurements();
   }
 
   getMeasurements(): void {
-    this.measurments$ = this.http.get<Measurments>(environment.apiUrl + `measurement/latest/${this.authService.selectedFieldId}`);
+    this.measurments$ = this.http.get<Measurments>(environment.apiUrl + `measurement/latest/${this.selectionService.selectedFieldId}`);
   }
 
 }

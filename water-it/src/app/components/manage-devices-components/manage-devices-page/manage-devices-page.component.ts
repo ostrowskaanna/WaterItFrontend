@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { FieldFormComponent } from '../field-form/field-form.component';
-import { AuthService } from 'src/app/services/auth.service';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Field } from 'src/app/models/field.model';
+import { SelectionService } from 'src/app/services/selection.service';
 
 @Component({
   selector: 'app-manage-devices-page',
@@ -15,42 +15,24 @@ import { Field } from 'src/app/models/field.model';
 export class ManageDevicesPageComponent implements OnInit {
 
   userFields$!: Observable<Field[]> | undefined;
-  selectedFieldId: number | undefined;
+  selectedFieldId$!: Observable<number | undefined>;
 
-  constructor(private dialog: MatDialog, private authService: AuthService, private http: HttpClient) { }
-
-  //testowo 
-  testField0: Field = {
-    id: 0,
-    name: "test0",
-    latitude: 0,
-    longitude: 0,
-    actualCropType: "potato",
-    device: {
-      id: 1,
-      externalDeviceId: "dferfcrds",
-      "active": true
-    }
-  }
-  testField1: Field = {
-    id: 1,
-    name: "test1",
-    latitude: -10,
-    longitude: 10,
-    actualCropType: "potato",
-    device: {
-      id: 1,
-      externalDeviceId: "dferfcrds",
-      "active": true
-    }
-  }
+  constructor(private dialog: MatDialog, private http: HttpClient, private selectionService: SelectionService) { }
 
   ngOnInit(): void { 
     this.getUserFields();
+
+    // to działa z jakimś opóźnieniem - checkobx na liście nie zmienia się w momencie gdy klikam pole na mapce
+    this.selectedFieldId$ = this.selectionService.getSelectedFieldId();
   }
 
   getUserFields(): void {
     this.userFields$ = this.http.get<Field[]>(environment.apiUrl + 'fields');
+    this.http.get<Field[]>(environment.apiUrl + 'fields').subscribe(
+      response => {
+        console.log(response);
+      }
+    )
   }
 
   openDialog(): void {
@@ -63,9 +45,7 @@ export class ManageDevicesPageComponent implements OnInit {
   }
 
   selectField(fieldId: number): void {
-    this.selectedFieldId = fieldId;
-    console.log(this.selectedFieldId);
-    this.authService.selectField(fieldId);
+    this.selectionService.setSelectedFieldId(fieldId);
   }
 
 }

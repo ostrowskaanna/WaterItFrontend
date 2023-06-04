@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { SelectionService } from 'src/app/services/selection.service';
 
 @Component({
   selector: 'app-water-requirement-prediction',
@@ -13,13 +14,13 @@ export class WaterRequirementPredictionComponent implements OnInit {
 
   prediction$!: Observable<any> | undefined;
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(private http: HttpClient, private authService: AuthService, private selectionService: SelectionService) { }
 
   ngOnInit(): void {
     this.getPrediction();
   }
 
   getPrediction(): void {
-    this.prediction$ = this.http.get<any>(environment.apiUrl + `water-requirement/${this.authService.selectedFieldId}`);
+    this.prediction$ = this.http.get<any>(environment.apiUrl + `water-requirement/${this.selectionService.selectedFieldId}`);
   }
 }

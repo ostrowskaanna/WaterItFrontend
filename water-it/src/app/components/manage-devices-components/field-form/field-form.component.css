@@ -6,8 +6,9 @@
     width: 100%;
   }
 
-div.field-form-content{
+div.field-form-content, div.loading, div.success, div.error {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: white;
@@ -97,4 +98,24 @@ button:hover{
 
 input{
     text-align: center;
+}
+
+p.info {
+    color: #10C75B;
+    font-size: 2vh;
+    margin-top: 1vh;
+}
+
+div.spinner {
+    border: 8px solid #10C75B;
+    border-top: 8px solid white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

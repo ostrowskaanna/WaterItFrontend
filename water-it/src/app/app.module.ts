@@ -36,7 +36,7 @@ import { FieldFormComponent } from './components/manage-devices-components/field
 import { MatDialogModule } from '@angular/material/dialog';
 import { WaterRequirementPredictionComponent } from './components/dashboard-components/water-requirement-prediction/water-requirement-prediction.component';
 import { FieldsListItemComponent } from './components/manage-devices-components/fields-list-item/fields-list-item.component';
-
+import { SelectionService } from './services/selection.service';
 
 @NgModule({
   declarations: [
@@ -80,7 +80,8 @@ import { FieldsListItemComponent } from './components/manage-devices-components/
     MatDialogModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
+    SelectionService
   ],
   bootstrap: [AppComponent]
 })

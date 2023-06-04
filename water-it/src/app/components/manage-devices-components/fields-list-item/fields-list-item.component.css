@@ -10,3 +10,7 @@
     font-size: 4vh;
     margin-top: 1vh;
 }
+
+input {
+    cursor: pointer;
+}

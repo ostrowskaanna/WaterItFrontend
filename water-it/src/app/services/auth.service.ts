@@ -14,11 +14,9 @@ export class AuthService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser: any;
   badPassword: boolean = false;
-  selectedFieldId: number | undefined;
 
-  constructor(private http: HttpClient, public router: Router) {
+  constructor(private http: HttpClient, public router: Router) { }
 
-  }
   // Sign-up
   register(registerDTO: any){
     console.log(registerDTO);
@@ -68,10 +66,5 @@ export class AuthService {
       localStorage.removeItem('fieldId');
     }
   }
-
-  selectField(fieldId: number) {
-    localStorage.setItem('fieldId', fieldId.toString());
-    this.selectedFieldId = fieldId;
-  }
-
+  
 }

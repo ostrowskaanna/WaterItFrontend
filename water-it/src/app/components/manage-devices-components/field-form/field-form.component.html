@@ -1,4 +1,4 @@
-<div id="field-form-content">
+<div id="field-form-content" *ngIf="!loadingView && !success && !error">
     <div class="field-form-container">
         <h1 class="title">Enter data for your field</h1>
         <form [formGroup]="newFieldForm" class="field-form" (ngSubmit)="newFieldForm.valid && onSubmit()">
@@ -28,4 +28,17 @@
         
         </form>
     </div>
+</div>
+
+<div class="loading" *ngIf="loadingView">
+    <div class="spinner"></div>
+    <p class="info">Adding...</p>
+</div>
+
+<div class="success" *ngIf="!loadingView && success">
+    <p class="info">Successfully added!</p>
+</div>
+
+<div class="error" *ngIf="!loadingView && error">
+    <p class="info">Some error occured... Please contact administrator or try again.</p>
 </div>
