@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { circle, latLng, tileLayer, marker, icon, Map } from 'leaflet';
 import { Observable } from 'rxjs';
 import { SelectionService } from 'src/app/services/selection.service';
+import { Field } from 'src/app/models/field.model';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-fields-map',
@@ -23,10 +26,10 @@ export class FieldsMapComponent implements OnInit {
   fieldId: number | undefined;
   selectedFieldId$!: Observable<number | undefined>;
 
-  constructor(private selectionService: SelectionService) {}
+  constructor(private selectionService: SelectionService, private http: HttpClient) {}
 
   ngOnInit(): void { 
-    // w tą stronę działa dobrze - przy kliknięciu pola z listy robi update markerów
+    // w tą stronę działa dobrze - przy kliknięciu pola z listy mapa robi update markerów
     this.selectionService.getSelectedFieldId().subscribe(id => {
       this.fieldId = id;
       this.updateMarkerSelection();
@@ -55,12 +58,16 @@ export class FieldsMapComponent implements OnInit {
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
   })
 
-  // testowo na sztywno
-  addMarkers() {
+  async addMarkers() {
+
+    // testowo na sztywno
     const coordinates = [
       { lat: 50.061853, lng: 19.936989, id: 1 },
       { lat: 50.064381, lng: 19.944574, id: 2 }
     ];
+
+    // do zmiany na to gdy będzie lat i lon w api
+    //const coordinates = await this.http.get<Field[]>(environment.apiUrl + 'fields').toPromise();
 
     coordinates.forEach(coord => {
       let markerOptions = {
@@ -78,6 +85,7 @@ export class FieldsMapComponent implements OnInit {
       this.markers[coord.id] = markerInstance;
     });
   }
+
 
   onMarkerClick(event: L.LeafletMouseEvent, marker: L.Marker): void {
     this.fieldId = parseInt(marker.options.title!);
