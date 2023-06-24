@@ -14,9 +14,9 @@ export class AuthService {
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser: any;
   badPassword: boolean = false;
-  constructor(private http: HttpClient, public router: Router) {
 
-  }
+  constructor(private http: HttpClient, public router: Router) { }
+
   // Sign-up
   register(registerDTO: any){
     console.log(registerDTO);
@@ -63,7 +63,8 @@ export class AuthService {
     if (removeToken == null && removeRefreshToken == null) {
       this.router.navigate(['login']);
       localStorage.removeItem('username');
+      localStorage.removeItem('fieldId');
     }
   }
-
+  
 }

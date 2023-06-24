@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeviceFormComponent } from './device-form.component';
+import { FieldsListItemComponent } from './fields-list-item.component';
 
-describe('DeviceFormComponent', () => {
-  let component: DeviceFormComponent;
-  let fixture: ComponentFixture<DeviceFormComponent>;
+describe('FieldsListItemComponent', () => {
+  let component: FieldsListItemComponent;
+  let fixture: ComponentFixture<FieldsListItemComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeviceFormComponent ]
+      declarations: [ FieldsListItemComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeviceFormComponent);
+    fixture = TestBed.createComponent(FieldsListItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

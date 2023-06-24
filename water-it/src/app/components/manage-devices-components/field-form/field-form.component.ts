@@ -18,12 +18,14 @@ export class FieldFormComponent implements OnInit {
     longitude: new FormControl(''),
     actualCropType: new FormControl('', Validators.required),
     addDeviceRequest: new FormGroup({
-      externalDeviceId: new FormControl('')
+      externalDeviceId: new FormControl('', Validators.required)
     })
   });
 
-    // get this from db
   cropTypes: any[] =[];
+  loadingView: boolean = false;
+  success: boolean = false;
+  error: boolean = false;
 
   @Inject(MAT_DIALOG_DATA) public data: any;
 
@@ -31,7 +33,6 @@ export class FieldFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCropTypes();
-    console.log(this.authService.currentUser);
   }
 
   getCropTypes(): void {
@@ -45,16 +46,21 @@ export class FieldFormComponent implements OnInit {
   }
 
   onSubmit() {
-
-    //
+    this.loadingView = true;
     const formData = this.newFieldForm.getRawValue();
     console.log(formData);
-    // this.http.post(environment.apiUrl + 'fields', formData).subscribe(
-    //   (response) => {
-    //     console.log(response);
-    //   },
-    //   (error) => {
-    //     console.error(error);
-    //   });
+    this.http.post(environment.apiUrl + 'fields', formData).subscribe(
+      (response) => {
+        console.log(response);
+        this.loadingView = false;
+        this.success = true;
+        this.error = false;
+      },
+      (error) => {
+        console.error(error);
+        this.loadingView = false;
+        this.success = false;
+        this.error = true;
+      });
   }
 }

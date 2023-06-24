@@ -1,4 +1,4 @@
-<div id="field-form-content">
+<div id="field-form-content" *ngIf="!loadingView && !success && !error">
     <div class="field-form-container">
         <h1 class="title">Enter data for your field</h1>
         <form [formGroup]="newFieldForm" class="field-form" (ngSubmit)="newFieldForm.valid && onSubmit()">
@@ -18,12 +18,27 @@
             </div>
 
             <div formGroupName="addDeviceRequest">
-                <input type="text" class="field-fields" placeholder="Device Id" formControlName="externalDeviceId" style="border-color: #33B9DE;">
+                <input type="text" class="field-fields" placeholder="External Device Id" formControlName="externalDeviceId" style="border-color: #33B9DE;" required="">
             </div>
-            <p class="device-info">You can connect device now or later</p>
+            <div class="error" *ngIf="this.newFieldForm.get('addDeviceRequest')?.get('externalDeviceId')?.hasError('required')" style="color: #33B9DE;"> 
+                Device is required.
+            </div>
 
             <button class="add-button" type="submit">Add</button>
         
         </form>
     </div>
+</div>
+
+<div class="loading" *ngIf="loadingView">
+    <div class="spinner"></div>
+    <p class="info">Adding...</p>
+</div>
+
+<div class="success" *ngIf="!loadingView && success">
+    <p class="info">Successfully added!</p>
+</div>
+
+<div class="error" *ngIf="!loadingView && error">
+    <p class="info">Some error occured... Please contact administrator or try again.</p>
 </div>

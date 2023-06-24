@@ -34,10 +34,9 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { UserPanelComponent } from './components/user-panel/user-panel.component';
 import { FieldFormComponent } from './components/manage-devices-components/field-form/field-form.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { DeviceFormComponent } from './components/manage-devices-components/device-form/device-form.component';
 import { WaterRequirementPredictionComponent } from './components/dashboard-components/water-requirement-prediction/water-requirement-prediction.component';
-import { DevicesListItemComponent } from './components/manage-devices-components/devices-list-item/devices-list-item.component';
-
+import { FieldsListItemComponent } from './components/manage-devices-components/fields-list-item/fields-list-item.component';
+import { SelectionService } from './services/selection.service';
 
 @NgModule({
   declarations: [
@@ -65,9 +64,8 @@ import { DevicesListItemComponent } from './components/manage-devices-components
     FieldsMapComponent,
     UserPanelComponent,
     FieldFormComponent,
-    DeviceFormComponent,
     WaterRequirementPredictionComponent,
-    DevicesListItemComponent
+    FieldsListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +80,8 @@ import { DevicesListItemComponent } from './components/manage-devices-components
     MatDialogModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true },
+    SelectionService
   ],
   bootstrap: [AppComponent]
 })

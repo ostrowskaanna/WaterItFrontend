@@ -3,11 +3,15 @@
     <div class="manage-devices-content">
         <div class="left-side-content">
             <div class="header">
-                <p class="title">DEVICES</p>
+                <p class="title">FIELDS</p>
                 <button (click)="openDialog()">+</button>
             </div>
-            <div class="devices-list">
-                
+            <div class="fields-list" *ngIf="userFields$ | async as fields">
+                <app-fields-list-item *ngFor="let field of fields"
+                     [data]="field"
+                     [selectedFieldId]="selectedFieldId$ | async"
+                     (selectField)="selectField($event)">
+                </app-fields-list-item>
             </div>
         </div>
         <div class="fields-map-container">
