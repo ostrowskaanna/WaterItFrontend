@@ -14,7 +14,8 @@ export class SelectionService {
     selectedFieldId: number | undefined;
 
     constructor() {
-        this.getSelectedFieldId().subscribe(id => this.selectedFieldId = id);
+        this.selectedFieldId = parseInt(localStorage.getItem('fieldId') || '');
+        this.selectedFieldIdSubject.next(this.selectedFieldId);
     }
 
     setSelectedFieldId(fieldId: number): void {
