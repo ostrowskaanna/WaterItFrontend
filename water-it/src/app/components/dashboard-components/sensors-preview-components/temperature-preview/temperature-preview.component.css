@@ -1,6 +1,7 @@
 .temperature-preview-chart-container {
     background-color: white;
     transition: 0.7s;
+    text-align: center;
 }
 
 .temperature-preview-chart-container:hover {

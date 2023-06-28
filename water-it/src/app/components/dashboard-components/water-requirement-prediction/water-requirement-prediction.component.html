@@ -1,3 +1,6 @@
 <div class="prediction-container" *ngIf="prediction$ | async as prediction">
-    {{prediction.waterRequireAmount}}
+    <div class="icon-container">
+        <img src="../.././../../../assets/Images/watering-can.png" alt="">
+    </div>
+    <p class="prediction-value">{{prediction.waterRequireAmount}} mm/m<sup>2</sup> per day</p>
 </div>

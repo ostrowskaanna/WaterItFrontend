@@ -60,10 +60,10 @@ export class AuthService {
   doLogout() {
     let removeToken = localStorage.removeItem('accessToken');
     let removeRefreshToken = localStorage.removeItem('refreshToken');
-    if (removeToken == null && removeRefreshToken == null) {
+    let removeUsername = localStorage.removeItem('username');
+    let removeId = localStorage.removeItem('fieldId');
+    if (removeToken == null && removeRefreshToken == null && removeUsername == null && removeId == null) {
       this.router.navigate(['login']);
-      localStorage.removeItem('username');
-      localStorage.removeItem('fieldId');
     }
   }
   

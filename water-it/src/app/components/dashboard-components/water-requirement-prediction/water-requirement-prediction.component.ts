@@ -21,6 +21,6 @@ export class WaterRequirementPredictionComponent implements OnInit {
   }
 
   getPrediction(): void {
-    this.prediction$ = this.http.get<any>(environment.apiUrl + `water-requirement/${this.selectionService.selectedFieldId}`);
+    this.prediction$ = this.http.get<any>(environment.apiUrl + `water-requirement?fieldId=${this.selectionService.selectedFieldId}`);
   }
 }
