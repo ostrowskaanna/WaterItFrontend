@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.prod';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AuthService } from 'src/app/services/auth.service';
+import { Field } from 'src/app/models/field.model';
 
 @Component({
   selector: 'app-field-form',
@@ -15,7 +16,7 @@ export class FieldFormComponent implements OnInit {
   newFieldForm = new FormGroup({
     name: new FormControl('', Validators.required),
     latitude: new FormControl(''),
-    longitude: new FormControl(''),
+    longitude: new FormControl(''), 
     actualCropType: new FormControl('', Validators.required),
     addDeviceRequest: new FormGroup({
       externalDeviceId: new FormControl('', Validators.required)
@@ -49,12 +50,24 @@ export class FieldFormComponent implements OnInit {
     this.loadingView = true;
     const formData = this.newFieldForm.getRawValue();
     console.log(formData);
+    // post new field
     this.http.post(environment.apiUrl + 'fields', formData).subscribe(
       (response) => {
         console.log(response);
+        // get fields to check if field added and device active
+        this.http.get<Field[]>(environment.apiUrl + 'fields').subscribe(
+          response => {
+            if (response[response.length - 1].device.active == true) {
+              this.success = true;
+              this.error = false;
+            }
+            else {
+              this.success = false;
+              this.error = true;
+            }
+          }
+        )
         this.loadingView = false;
-        this.success = true;
-        this.error = false;
       },
       (error) => {
         console.error(error);

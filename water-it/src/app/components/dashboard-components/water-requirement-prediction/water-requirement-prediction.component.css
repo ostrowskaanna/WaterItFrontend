@@ -1,0 +1,22 @@
+.prediction-container {
+    transition: 0.7s;
+    text-align: center;
+}
+
+.icon-container {
+    height: 10vh;
+}
+
+img {
+    width: 80%;
+    height: 100%;
+}
+
+.prediction-container:hover {
+    scale: 1.4;
+    cursor: pointer;
+}
+
+.prediction-label {
+    font-size: 13pt;
+}

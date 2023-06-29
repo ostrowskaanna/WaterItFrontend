@@ -21,7 +21,7 @@ export class DashboardPageComponent implements OnInit {
   }
 
   getMeasurements(): void {
-    this.measurments$ = this.http.get<Measurments>(environment.apiUrl + `measurement/latest/${this.selectionService.selectedFieldId}`);
+    this.measurments$ = this.http.get<Measurments>(environment.apiUrl + `measurement/latest?fieldId=${this.selectionService.selectedFieldId}`);
   }
 
 }

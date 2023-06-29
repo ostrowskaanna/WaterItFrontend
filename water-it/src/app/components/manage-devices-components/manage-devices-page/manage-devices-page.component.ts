@@ -16,7 +16,7 @@ export class ManageDevicesPageComponent implements OnInit {
 
   userFields$!: Observable<Field[]> | undefined;
   selectedFieldId$!: Observable<number | undefined>;
-
+  selectedId: number | undefined;
   constructor(private dialog: MatDialog, private http: HttpClient, private selectionService: SelectionService) { }
 
   ngOnInit(): void { 
@@ -24,6 +24,9 @@ export class ManageDevicesPageComponent implements OnInit {
 
     // to działa z jakimś opóźnieniem - checkobx na liście nie zmienia się w momencie gdy klikam pole na mapce
     this.selectedFieldId$ = this.selectionService.getSelectedFieldId();
+    this.selectionService.getSelectedFieldId().subscribe(id => {
+      this.selectedId = id;
+    });
   }
 
   getUserFields(): void {

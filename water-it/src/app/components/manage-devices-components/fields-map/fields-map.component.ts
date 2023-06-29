@@ -34,7 +34,7 @@ export class FieldsMapComponent implements OnInit {
       this.fieldId = id;
       this.updateMarkerSelection();
     });
-    this.selectedFieldId$ = this.selectionService.getSelectedFieldId();
+    //this.selectedFieldId$ = this.selectionService.getSelectedFieldId();
   }
 
   onMapReady(map: Map): void {
