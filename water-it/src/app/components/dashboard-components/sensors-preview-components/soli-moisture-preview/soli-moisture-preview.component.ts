@@ -37,7 +37,7 @@ export class SoliMoisturePreviewComponent implements OnChanges {
 
    ngOnChanges(changes: SimpleChanges) {
     if(changes.data && this.data) {
-      this.chartOptions.series = [this.data.moistureHumidity * 100]
+      this.chartOptions.series = [Math.round(this.data.moistureHumidity * 100)]
     }
   }
 
