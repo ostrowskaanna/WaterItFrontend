@@ -60,7 +60,7 @@ export class HumidityPreviewComponent implements OnChanges {
 
    ngOnChanges(changes: SimpleChanges) {
     if(changes.data && this.data) {
-      this.chartOptions.series = [this.data.humidity * 100]
+      this.chartOptions.series = [Math.round(this.data.humidity * 100)]
     }
   }
 
